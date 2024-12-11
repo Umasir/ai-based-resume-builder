@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>AI Resume Builder</h1>
+<form id="resumeForm" method="POST" action="/preview">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="text" name="contact" placeholder="Contact" required>
+    
+    <!-- Summary Input with AI assist button -->
+    <textarea id="summary" name="summary" placeholder="Write a brief summary about yourself..."></textarea>
+    <button type="button" id="generateSummaryBtn">Generate Summary with AI</button>
+
+    <textarea name="skills" placeholder="Skills (comma-separated)"></textarea>
+    <textarea name="experience" placeholder="Experience"></textarea>
+    <textarea name="education" placeholder="Education"></textarea>
+    
+    <button type="submit">Preview Resume</button>
+</form>
+
+<!-- Add error message display -->
+<div id="error-message" style="color:red; display:none;"></div>
+
+{% endblock %}
